@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.alimotie.gentein.output_genrated">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:isScrollContainer="true">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/border"
+    android:layout_margin="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5'3 Frame 1"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:id="@+id/Frame"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+
+
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/output1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open-Reading-Frame"
+        android:textColor="@color/purple"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/OPEN_REDING1"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        />
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        android:layout_margin="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5'3 Frame 1"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:id="@+id/Frame2"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+
+
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/output2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open-Reading-Frame"
+            android:textColor="@color/purple"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/OPEN_REDING2"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        android:layout_margin="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5'3 Frame 1"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:id="@+id/Frame3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+
+
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/output3"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open-Reading-Frame"
+            android:textColor="@color/purple"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/OPEN_REDING3"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        android:layout_margin="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5'3 Frame 1"
+        android:textSize="15dp"
+android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:id="@+id/Frame4"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+
+
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/output4"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open-Reading-Frame"
+            android:textColor="@color/purple"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/OPEN_REDING4"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        android:layout_margin="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5'3 Frame 1"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:id="@+id/Frame5"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+
+
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/output5"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open-Reading-Frame"
+            android:textColor="@color/purple"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/OPEN_REDING5"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        android:layout_margin="10dp">
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5'3 Frame 1"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:id="@+id/Frame6"/>
+         <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+
+
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/output6"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open-Reading-Frame"
+            android:textColor="@color/purple"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/OPEN_REDING6"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>

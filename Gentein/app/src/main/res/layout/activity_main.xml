@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.alimotie.gentein.MainActivity"
+    android:orientation="vertical"
+    android:isScrollContainer="true"
+    >
+
+<EditText
+    android:background="@drawable/border"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="0px"
+    android:layout_weight="5"
+    android:hint="@string/atg_augc"
+    android:id="@+id/Atg"
+    android:textColor="@color/purple"
+    />
+
+
+    <LinearLayout
+        android:id="@+id/lmain"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="0px"
+            android:layout_height="70sp"
+            android:layout_weight="1"
+            android:textSize="11sp"
+            android:text="@string/translate_sequance"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/myb"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/tran_sq"
+            android:shadowColor="@color/purple"
+            android:textStyle="bold"
+
+            />
+
+
+        <Button
+            android:layout_width="0px"
+            android:layout_height="70sp"
+            android:layout_weight="1"
+            android:text="@string/genrate_random_dna_seq"
+            android:textSize="11sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/myb"
+            android:shadowColor="@color/purple"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/Genrate_Rondom_dna_seq_"
+
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
