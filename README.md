@@ -1,2 +1,2 @@
 # Gentien
-Android App tansfer DNA/mRNA Sequences To Protein Sequence Six-Frames and Open-Reading Frames Finder
+Android App transfer DNA/mRNA Sequences To Protein Sequence Six-Frames and Open-Reading Frames Finder
