@@ -70,17 +70,21 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Enter Lemgth of DNA Sequance",Toast.LENGTH_SHORT).show();
                           }
                         else{
-                            int indx = Integer.parseInt(idx);
-                            Random random = new Random();
 
-                            char[] x = {'G', 'T', 'C', 'A'};
-                            char[] R_SEQ = new char[indx];
-                            for (int i = 0; i < R_SEQ.length; i++) {
-                                R_SEQ[i] = x[random.nextInt(x.length)];
-                            }
-                            String Ron_seq = new String(R_SEQ);
-                            Atg.setText(Ron_seq);
-                            dialog.cancel();
+                            int indx = Integer.parseInt(idx);
+
+                                Random random = new Random();
+
+                                char[] x = {'G', 'T', 'C', 'A'};
+                                char[] R_SEQ = new char[indx];
+                                for (int i = 0; i < R_SEQ.length; i++) {
+                                    R_SEQ[i] = x[random.nextInt(x.length)];
+                                }
+                                String Ron_seq = new String(R_SEQ);
+                                Atg.setText(Ron_seq);
+                                dialog.cancel();
+
+
 
                         }
                     }
