@@ -65,17 +65,24 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String idx = Length.getText().toString();
-                        int indx = Integer.parseInt(idx);
-                        Random random = new Random();
 
-                        char[] x = {'G', 'T', 'C', 'A'};
-                        char[] R_SEQ = new char[indx];
-                        for (int i = 0; i < R_SEQ.length; i++) {
-                            R_SEQ[i] = x[random.nextInt(x.length)];
+                        if(idx.isEmpty()){
+                            Toast.makeText(getApplicationContext(),"Enter Lemgth of DNA Sequance",Toast.LENGTH_SHORT).show();
+                          }
+                        else{
+                            int indx = Integer.parseInt(idx);
+                            Random random = new Random();
+
+                            char[] x = {'G', 'T', 'C', 'A'};
+                            char[] R_SEQ = new char[indx];
+                            for (int i = 0; i < R_SEQ.length; i++) {
+                                R_SEQ[i] = x[random.nextInt(x.length)];
+                            }
+                            String Ron_seq = new String(R_SEQ);
+                            Atg.setText(Ron_seq);
+                            dialog.cancel();
+
                         }
-                        String Ron_seq = new String(R_SEQ);
-                        Atg.setText(Ron_seq);
-                        dialog.cancel();
                     }
                 });
                 Close.setOnClickListener(new View.OnClickListener() {
@@ -93,49 +100,56 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String Atg_DATA = Atg.getText().toString();
-                char[] Seq_Array = Atg_DATA.toCharArray();
-                String OUTPUT = GENTEN_SEQ(Seq_Array);
+                if(Atg_DATA.isEmpty()){
 
-                Seq_Array = MOVE_ONE_CHAR(Seq_Array);
-                String OUTPUT2 = GENTEN_SEQ(Seq_Array);
-                Seq_Array = MOVE_ONE_CHAR(Seq_Array);
-                String OUTPUT3 = GENTEN_SEQ(Seq_Array);
-                Seq_Array = REV_SEQ(Seq_Array);
-                String OUTPUT4 = GENTEN_SEQ(Seq_Array);
-                Seq_Array = MOVE_ONE_CHAR(Seq_Array);
-                String OUTPUT5 = GENTEN_SEQ(Seq_Array);
-                Seq_Array = MOVE_ONE_CHAR(Seq_Array);
-                String OUTPUT6 = GENTEN_SEQ(Seq_Array);
-               ArrayList<String> arrayList = new ArrayList<String>();
-                ArrayList<String> arrayList2 = new ArrayList<String>();
-                ArrayList<String> arrayList3 = new ArrayList<String>();
-                ArrayList<String> arrayList4 = new ArrayList<String>();
-                ArrayList<String> arrayList5 = new ArrayList<String>();
-                ArrayList<String> arrayList6 = new ArrayList<String>();
+                    Toast.makeText(getApplicationContext(),"Enter DNA Sequance",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    char[] Seq_Array = Atg_DATA.toCharArray();
+                    String OUTPUT = GENTEN_SEQ(Seq_Array);
 
-                  arrayList=OPEN_FRAME_REDING(OUTPUT);
+                    Seq_Array = MOVE_ONE_CHAR(Seq_Array);
+                    String OUTPUT2 = GENTEN_SEQ(Seq_Array);
+                    Seq_Array = MOVE_ONE_CHAR(Seq_Array);
+                    String OUTPUT3 = GENTEN_SEQ(Seq_Array);
+                    Seq_Array = REV_SEQ(Seq_Array);
+                    String OUTPUT4 = GENTEN_SEQ(Seq_Array);
+                    Seq_Array = MOVE_ONE_CHAR(Seq_Array);
+                    String OUTPUT5 = GENTEN_SEQ(Seq_Array);
+                    Seq_Array = MOVE_ONE_CHAR(Seq_Array);
+                    String OUTPUT6 = GENTEN_SEQ(Seq_Array);
+                    ArrayList<String> arrayList = new ArrayList<String>();
+                    ArrayList<String> arrayList2 = new ArrayList<String>();
+                    ArrayList<String> arrayList3 = new ArrayList<String>();
+                    ArrayList<String> arrayList4 = new ArrayList<String>();
+                    ArrayList<String> arrayList5 = new ArrayList<String>();
+                    ArrayList<String> arrayList6 = new ArrayList<String>();
 
-                 arrayList2=OPEN_FRAME_REDING(OUTPUT2);
-                arrayList3=OPEN_FRAME_REDING(OUTPUT3);
-                arrayList4=OPEN_FRAME_REDING(OUTPUT4);
-                arrayList5=OPEN_FRAME_REDING(OUTPUT5);
-                arrayList6=OPEN_FRAME_REDING(OUTPUT6);
+                    arrayList=OPEN_FRAME_REDING(OUTPUT);
 
-                Intent intent = new Intent(MainActivity.this, output_genrated.class);
-               intent.putExtra("ARRAYLIST1", arrayList);
-                intent.putExtra("ARRAYLIST2", arrayList2);
-                intent.putExtra("ARRAYLIST3", arrayList3);
-                intent.putExtra("ARRAYLIST4", arrayList4);
-                intent.putExtra("ARRAYLIST5", arrayList5);
-                intent.putExtra("ARRAYLIST6", arrayList6);
-                intent.putExtra("OUTPUT1", OUTPUT);
-                intent.putExtra("OUTPUT2", OUTPUT2);
-                intent.putExtra("OUTPUT3", OUTPUT3);
-                intent.putExtra("OUTPUT4", OUTPUT4);
-                intent.putExtra("OUTPUT5", OUTPUT5);
-                intent.putExtra("OUTPUT6", OUTPUT6);
-                startActivity(intent);
+                    arrayList2=OPEN_FRAME_REDING(OUTPUT2);
+                    arrayList3=OPEN_FRAME_REDING(OUTPUT3);
+                    arrayList4=OPEN_FRAME_REDING(OUTPUT4);
+                    arrayList5=OPEN_FRAME_REDING(OUTPUT5);
+                    arrayList6=OPEN_FRAME_REDING(OUTPUT6);
+
+                    Intent intent = new Intent(MainActivity.this, output_genrated.class);
+                    intent.putExtra("ARRAYLIST1", arrayList);
+                    intent.putExtra("ARRAYLIST2", arrayList2);
+                    intent.putExtra("ARRAYLIST3", arrayList3);
+                    intent.putExtra("ARRAYLIST4", arrayList4);
+                    intent.putExtra("ARRAYLIST5", arrayList5);
+                    intent.putExtra("ARRAYLIST6", arrayList6);
+                    intent.putExtra("OUTPUT1", OUTPUT);
+                    intent.putExtra("OUTPUT2", OUTPUT2);
+                    intent.putExtra("OUTPUT3", OUTPUT3);
+                    intent.putExtra("OUTPUT4", OUTPUT4);
+                    intent.putExtra("OUTPUT5", OUTPUT5);
+                    intent.putExtra("OUTPUT6", OUTPUT6);
+                    startActivity(intent);
+                }
             }
+
         });
 
 
@@ -147,102 +161,102 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i = 0; i < Array.length; i++) {
 
-                if (Array[i] == 'A') {
+                if (Array[i] == 'A' ||Array[i]=='a') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "K ";
                         } else {
                             OUTPUT += "N ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "R ";
                         } else {
                             OUTPUT += "S ";
                         }
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "T ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
-                        if (Array[i] == 'G') {
+                        if (Array[i] == 'G' ||Array[i]=='g') {
                             OUTPUT += "Met ";
                         } else {
                             OUTPUT += "L ";
                         }
                     }
                 }//END OF A
-                else if (Array[i] == 'G') {
+                else if (Array[i] == 'G' ||Array[i]=='g') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "E ";
                         } else {
                             OUTPUT += "D ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
                         OUTPUT += "G ";
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "A ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
                         OUTPUT += "V ";
                     }
                 }//END OF G
-                else if (Array[i] == 'C') {
+                else if (Array[i] == 'C' ||Array[i]=='c') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "Q ";
                         } else {
                             OUTPUT += "H ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
                         OUTPUT += "R ";
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "P ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
                         OUTPUT += "L ";
                     }
                 }//END OF C
-                else if (Array[i] == 'T') {
+                else if (Array[i] == 'T' ||Array[i]=='t') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "STOP ";
                         } else {
                             OUTPUT += "Y ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
-                        if (Array[i] == 'A') {
+                        if (Array[i] == 'A' ||Array[i]=='a') {
                             OUTPUT += "STOP ";
-                        } else if (Array[i] == 'G') {
+                        } else if (Array[i] == 'G' ||Array[i]=='g') {
                             OUTPUT += "W ";
                         } else {
                             OUTPUT += "C ";
                         }
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "S ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "L ";
                         } else {
                             OUTPUT += "F ";
@@ -257,102 +271,102 @@ public class MainActivity extends AppCompatActivity {
             int x = Array.length % 3;
             for (int i = 0; i < Array.length - x; i++) {
 
-                if (Array[i] == 'A') {
+                if (Array[i] == 'A' ||Array[i]=='a') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "K ";
                         } else {
                             OUTPUT += "N ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "R ";
                         } else {
                             OUTPUT += "S ";
                         }
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "T ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
-                        if (Array[i] == 'G') {
+                        if (Array[i] == 'G' ||Array[i]=='g') {
                             OUTPUT += "Met ";
                         } else {
                             OUTPUT += "L ";
                         }
                     }
                 }//END OF A
-                else if (Array[i] == 'G') {
+                else if (Array[i] == 'G' ||Array[i]=='g') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "E ";
                         } else {
                             OUTPUT += "D ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
                         OUTPUT += "G ";
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "A ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
                         OUTPUT += "V ";
                     }
                 }//END OF G
-                else if (Array[i] == 'C') {
+                else if (Array[i] == 'C' ||Array[i]=='c') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "Q ";
                         } else {
                             OUTPUT += "H ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
                         OUTPUT += "R ";
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "P ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
                         OUTPUT += "L ";
                     }
                 }//END OF C
-                else if (Array[i] == 'T') {
+                else if (Array[i] == 'T' ||Array[i]=='t') {
                     i++;
-                    if (Array[i] == 'A') {
+                    if (Array[i] == 'A' ||Array[i]=='a') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "STOP ";
                         } else {
                             OUTPUT += "Y ";
                         }
-                    } else if (Array[i] == 'G') {
+                    } else if (Array[i] == 'G' ||Array[i]=='g') {
                         i++;
-                        if (Array[i] == 'A') {
+                        if (Array[i] == 'A' ||Array[i]=='a') {
                             OUTPUT += "STOP ";
-                        } else if (Array[i] == 'G') {
+                        } else if (Array[i] == 'G' ||Array[i]=='g') {
                             OUTPUT += "W ";
                         } else {
                             OUTPUT += "C ";
                         }
-                    } else if (Array[i] == 'C') {
+                    } else if (Array[i] == 'C' ||Array[i]=='c') {
                         i++;
                         OUTPUT += "S ";
 
-                    } else if (Array[i] == 'T') {
+                    } else if (Array[i] == 'T' ||Array[i]=='t') {
                         i++;
-                        if (Array[i] == 'A' || Array[i] == 'G') {
+                        if (Array[i] == 'A' || Array[i] == 'G' ||Array[i]=='a' ||Array[i]=='g') {
                             OUTPUT += "L ";
                         } else {
                             OUTPUT += "F ";
