@@ -10,47 +10,45 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.2"
-
-
-
-        android:paddingTop="15sp"
+        android:layout_height="10dp"
+        android:layout_weight="0.4"
+        android:gravity="center"
+        android:layout_marginTop="170dp"
         android:src="@drawable/asset2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_margin="0dp"
+        android:layout_weight="0.2"
+        android:fontFamily="@font/FallingSky"
+        android:text="Gentein"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="23sp" />
+        />
 
     <LinearLayout
         android:id="@+id/liner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
             android:layout_weight="1"
-            android:paddingTop="35sp"
-            android:text="@string/an_online_dna_mrna_sequences_to_protein_sequence_six_frame_translator_tool_with_open_reading_frames_finder"
+            android:paddingTop="0sp"
+            android:text="Translate DNA/RNA sequence to Protein easily, and search for its Open Reading Frame."
             android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="20sp"
+            android:textColor="#611470"
+            android:textSize="13sp"
             android:fontFamily="@font/FallingSkyLight"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_weight="1"
-            android:paddingTop="35sp"
-            android:text="@string/an_online_dna_mrna_sequences_to_protein_sequence_six_frame_translator_tool_with_open_reading_frames_finder"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="20sp"
-            android:fontFamily="@font/fallingsky"/>
             />
     </LinearLayout>
 </LinearLayout>
