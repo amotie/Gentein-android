@@ -21,17 +21,13 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         linearLayout=(LinearLayout)findViewById(R.id.liner);
         image=(ImageView)findViewById(R.id.image);
-        uptodown= AnimationUtils.loadAnimation(this,R.anim.uptodown);
-        downtoup=AnimationUtils.loadAnimation(this,R.anim.downtoup);
-        linearLayout.setAnimation(downtoup);
-        image.setAnimation(uptodown);
 
 
         Thread thread =new Thread(){
             @Override
             public void run() {
                 try {
-                    sleep(1000);
+                    sleep(5000);
                     Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                     finish();

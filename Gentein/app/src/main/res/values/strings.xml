@@ -7,6 +7,7 @@
     <string name="genrate_random_dna_seq">genrate random dna seq</string>
     <string name="atg_augc">ATG/AUGC</string>
     <string name="translate_sequance">Translate sequance</string>
-    <string name="an_online_dna_mrna_sequences_to_protein_sequence_six_frame_translator_tool_with_open_reading_frames_finder">An online DNA/mRNA Sequences to Protein Sequence Six-Frame Translator Tool With Open-Reading Frames Finder</string>
     <string name="todo">TODO</string>
+    <string name="gen_title">Gentein</string>
+    <string name="gen_body">Translate DNA/RNA sequence to Protein easily, and search for its Open Reading Frame.</string>
 </resources>
