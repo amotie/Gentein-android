@@ -11,7 +11,9 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.2"
+
+
 
         android:paddingTop="15sp"
         android:src="@drawable/asset2" />
@@ -25,14 +27,30 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             android:layout_weight="1"
-            android:paddingEnd="3dp"
-            android:paddingStart="20dp"
             android:paddingTop="35sp"
             android:text="@string/an_online_dna_mrna_sequences_to_protein_sequence_six_frame_translator_tool_with_open_reading_frames_finder"
             android:textAlignment="center"
-            android:textColor="@color/purple"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:fontFamily="@font/FallingSkyLight"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_weight="1"
+            android:paddingTop="35sp"
+            android:text="@string/an_online_dna_mrna_sequences_to_protein_sequence_six_frame_translator_tool_with_open_reading_frames_finder"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:fontFamily="@font/fallingsky"/>
+            />
     </LinearLayout>
 </LinearLayout>
