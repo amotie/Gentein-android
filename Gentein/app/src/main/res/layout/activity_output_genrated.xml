@@ -14,14 +14,23 @@
     android:isScrollContainer="true">
 
 
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/border"
     android:layout_margin="10dp">
+<ImageButton
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:src="@drawable/ic_content_copy_black_24dp"
+    android:layout_marginLeft="270dp"
+    android:backgroundTint="@color/colorAccent"
+    android:id="@+id/Copy"
+    android:onClick="Copy1"
+    />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5'3 Frame 1"
             android:textSize="15dp"
@@ -32,15 +41,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-
-
             android:textColor="@color/colorPrimary"
-            android:id="@+id/output1"/>
+            android:id="@+id/output1"
+            android:layout_below="@id/Copy"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Open-Reading-Frame"
-        android:textColor="@color/purple"/>
+        android:textColor="@color/purple"
+        android:id="@+id/Open"
+        android:layout_below="@id/output1"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -48,16 +58,27 @@
         android:id="@+id/OPEN_REDING1"
         android:textStyle="bold"
         android:textSize="15sp"
+        android:layout_below="@id/Open"
         />
 
 
-</LinearLayout>
-    <LinearLayout
+</RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/border"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        >
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_content_copy_black_24dp"
+            android:layout_marginLeft="270dp"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="Copy2"
+            android:id="@+id/Copy2"
+            />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-
+android:layout_below="@id/Copy2"
 
         android:textColor="@color/colorPrimary"
         android:id="@+id/output2"/>
@@ -78,33 +99,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Open-Reading-Frame"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_below="@id/output2"
+            android:id="@+id/Open2"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/OPEN_REDING2"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:layout_below="@id/Open2"/>
 
-    </LinearLayout>
-    <LinearLayout
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/border"
         android:layout_margin="10dp">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_content_copy_black_24dp"
+            android:layout_marginLeft="270dp"
+            android:backgroundTint="@color/colorAccent"
+            android:id="@+id/Copy3"
+            android:onClick="Copy3"
+            />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="5'3 Frame 1"
         android:textSize="15dp"
         android:textStyle="bold"
+
         android:textColor="@color/purple"
         android:id="@+id/Frame3"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:layout_below="@id/Copy3"
 
 
         android:textColor="@color/colorPrimary"
@@ -113,21 +148,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Open-Reading-Frame"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_below="@id/output3"
+            android:id="@+id/Open3"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/OPEN_REDING3"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:layout_below="@id/Open3"/>
 
-    </LinearLayout>
-    <LinearLayout
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/border"
         android:layout_margin="10dp">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_content_copy_black_24dp"
+            android:layout_marginLeft="270dp"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="Copy4"
+            />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -140,7 +186,7 @@ android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-
+android:layout_below="@id/Frame4"
 
         android:textColor="@color/colorPrimary"
         android:id="@+id/output4"/>
@@ -148,21 +194,33 @@ android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Open-Reading-Frame"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_below="@id/output4"
+            android:id="@+id/Open4"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/OPEN_REDING4"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:layout_below="@id/Open4"/>
 
-    </LinearLayout>
-    <LinearLayout
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/border"
         android:layout_margin="10dp">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_content_copy_black_24dp"
+            android:layout_marginLeft="270dp"
+            android:backgroundTint="@color/colorAccent"
+            android:id="@+id/Copy5"
+            android:onClick="Copy5"
+            />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -175,7 +233,7 @@ android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-
+android:layout_below="@id/Copy5"
 
         android:textColor="@color/colorPrimary"
         android:id="@+id/output5"/>
@@ -183,21 +241,33 @@ android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Open-Reading-Frame"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_below="@id/output5"
+            android:id="@+id/Open5"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/OPEN_REDING5"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:layout_below="@id/Open5"/>
 
-    </LinearLayout>
-    <LinearLayout
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/border"
         android:layout_margin="10dp">
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_content_copy_black_24dp"
+            android:layout_marginLeft="270dp"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="Copy6"
+            android:id="@+id/Copy6"
+            />
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -210,7 +280,7 @@ android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-
+android:layout_below="@id/Copy6"
 
         android:textColor="@color/colorPrimary"
         android:id="@+id/output6"/>
@@ -218,16 +288,19 @@ android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Open-Reading-Frame"
-            android:textColor="@color/purple"/>
+            android:textColor="@color/purple"
+            android:layout_below="@id/output6"
+            android:id="@+id/Open6"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/OPEN_REDING6"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:layout_below="@id/Open6"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </LinearLayout>

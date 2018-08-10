@@ -10,4 +10,5 @@
     <string name="todo">TODO</string>
     <string name="gen_title">Gentein</string>
     <string name="gen_body">Translate DNA/RNA sequence to Protein easily, and search for its Open Reading Frame.</string>
+    <string name="retrieve_from_genbank">RETRIEVE FROM GENBANK</string>
 </resources>

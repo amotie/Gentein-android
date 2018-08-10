@@ -1,21 +1,19 @@
 package com.alimotie.gentein;
 
+import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.content.ClipboardManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-
-import javax.xml.transform.Templates;
 
 public class output_genrated extends AppCompatActivity {
     TextView Frame;
-    TextView Output;
+    TextView Output1;
     TextView Frame2;
     TextView Output2;
     TextView Frame3;
@@ -32,13 +30,6 @@ public class output_genrated extends AppCompatActivity {
     TextView R_FRAME4;
     TextView R_FRAME5;
     TextView R_FRAME6;
-    String Outp1;
-    String Outp2;
-    String Outp3;
-    String Outp4;
-    String Outp5;
-    String Outp6;
-
 
 
     @Override
@@ -46,7 +37,7 @@ public class output_genrated extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_output_genrated);
         Frame = (TextView) findViewById(R.id.Frame);
-        Output = (TextView) findViewById(R.id.output1);
+        Output1 = (TextView) findViewById(R.id.output1);
         Frame2 = (TextView) findViewById(R.id.Frame2);
         Output2 = (TextView) findViewById(R.id.output2);
         Frame3 = (TextView) findViewById(R.id.Frame3);
@@ -66,116 +57,64 @@ public class output_genrated extends AppCompatActivity {
 
 
         Intent intent1 = getIntent();
-
-        if (intent1.hasExtra("OUTPUT1")) {
-            Outp1 = intent1.getStringExtra("OUTPUT1");
-            Output.setText(Outp1);
-
-        }
-        if (intent1.hasExtra("OUTPUT2")) {
-            Frame2.setText("5'3 Frame 2");
-            Outp2 = intent1.getStringExtra("OUTPUT2");
-            Output2.setText(Outp2);
-
-
-        }
-        if (intent1.hasExtra("OUTPUT3")) {
-            Frame3.setText("5'3 Frame 3");
-            Outp3 = intent1.getStringExtra("OUTPUT3");
-            Output3.setText(Outp3);
-
-
-        }
-        if (intent1.hasExtra("OUTPUT4")) {
-            Frame4.setText("3'5 Frame 1");
-            Outp4 = intent1.getStringExtra("OUTPUT4");
-            Output4.setText(Outp4);
-
-
-        }
-        if (intent1.hasExtra("OUTPUT5")) {
-            Frame5.setText("3'5 Frame 2");
-            Outp5 = intent1.getStringExtra("OUTPUT5");
-            Output5.setText(Outp5);
-
-
+        if (intent1.hasExtra("OutPut")) {
+            String[] Output = intent1.getStringArrayExtra("OutPut");
+            Frame.setText("5'3' Frame 1");
+            Output1.setText(Output[0]);
+            R_FRAME1.setText(Output[6]);
+            Frame2.setText("5'3' Frame 2");
+            Output2.setText(Output[1]);
+            R_FRAME2.setText(Output[7]);
+            Frame3.setText("5'3' Frame 3");
+            Output3.setText(Output[2]);
+            R_FRAME3.setText(Output[8]);
+            Frame4.setText("3'5' Frame 1");
+            Output4.setText(Output[3]);
+            R_FRAME4.setText(Output[9]);
+            Frame5.setText("3'5' Frame 2");
+            Output5.setText(Output[4]);
+            R_FRAME5.setText(Output[10]);
+            Frame6.setText("3'5' Frame 3");
+            Output6.setText(Output[5]);
+            R_FRAME6.setText(Output[11]);
         }
 
-        if (intent1.hasExtra("OUTPUT6")) {
-            Frame6.setText("3'5 Frame 3");
-            Outp6 = intent1.getStringExtra("OUTPUT6");
-            Output6.setText(Outp6);
-        }
-if(intent1.hasExtra("ARRAYLIST1")) {
-
-    ArrayList<String> arrayList1 = intent1.getStringArrayListExtra("ARRAYLIST1");
-if(arrayList1.size()!=0) {
-    int j=1;
-    for (int i = 0; i < arrayList1.size(); i++) {
-
-        R_FRAME1.append("["+j+"]"+arrayList1.get(i) + "\n");
-        j++;
     }
-}
-
-}
-
-
-if(intent1.hasExtra("ARRAYLIST2")) {
-    ArrayList<String> arrayList2 = new ArrayList<String>();
-    arrayList2 = intent1.getStringArrayListExtra("ARRAYLIST2");
-    int j=1;
-    for (int i = 0; i < arrayList2.size(); i++) {
-
-    R_FRAME2.append("["+j+"]"+arrayList2.get(i) + "\n");
-    j++;
+    public void Copy1(View view){
+ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData=ClipData.newPlainText("PROTEIN_DATA",Output1.getText().toString());
+        clipboardManager.setPrimaryClip(clipData);
+        Toast.makeText(getApplicationContext(), "Copied", Toast.LENGTH_SHORT).show();
     }
-}
-if(intent1.hasExtra("ARRAYLIST3")) {
-    ArrayList<String> arrayList3 = new ArrayList<>();
-    arrayList3 = intent1.getStringArrayListExtra("ARRAYLIST3");
-    int j=1;
-    for (int i = 0; i < arrayList3.size(); i++) {
-
-    R_FRAME3.append("["+j+"]"+arrayList3.get(i) + "\n");
-        j++;
-      }}
-
-if(intent1.hasExtra("ARRAYLIST4")) {
-
-    ArrayList<String> arrayList4 = new ArrayList<>();
-    arrayList4 = intent1.getStringArrayListExtra("ARRAYLIST4");
-    int j=1;
-       for (int i = 0; i < arrayList4.size(); i++) {
-
-    R_FRAME4.append("["+j+"]"+arrayList4.get(i) + "\n");
-j++;
-     }
-}
-if(intent1.hasExtra("ARRAYLIST5")) {
-    ArrayList<String> arrayList5 = new ArrayList<>();
-    arrayList5 = intent1.getStringArrayListExtra("ARRAYLIST5");
-    int j=1;
-      for (int i = 0; i < arrayList5.size(); i++) {
-
-    R_FRAME5.append("["+j+"]"+arrayList5.get(i) + "\n");
-j++;
+    public void Copy2(View view){
+        ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData=ClipData.newPlainText("PROTEIN_DATA",Output2.getText().toString());
+        clipboardManager.setPrimaryClip(clipData);
+        Toast.makeText(getApplicationContext(), "Copied", Toast.LENGTH_SHORT).show();
     }
-}
-if(intent1.hasExtra("ARRAYLIST6")) {
-
-    ArrayList<String> arrayList6 = new ArrayList<>();
-    arrayList6 = intent1.getStringArrayListExtra("ARRAYLIST6");
-    int j=1;
-      for (int i = 0; i < arrayList6.size(); i++) {
-
-    R_FRAME6.append("["+j+"]"+arrayList6.get(i) + "\n");
-j++;
+    public void Copy3(View view){
+        ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData=ClipData.newPlainText("PROTEIN_DATA",Output3.getText().toString());
+        clipboardManager.setPrimaryClip(clipData);
     }
-}
-}
-
-
+    public void Copy4(View view){
+        ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData=ClipData.newPlainText("PROTEIN_DATA",Output4.getText().toString());
+        clipboardManager.setPrimaryClip(clipData);
+        Toast.makeText(getApplicationContext(), "Copied", Toast.LENGTH_SHORT).show();
+    }
+    public void Copy5(View view){
+        ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData=ClipData.newPlainText("PROTEIN_DATA",Output5.getText().toString());
+        clipboardManager.setPrimaryClip(clipData);
+        Toast.makeText(getApplicationContext(), "Copied", Toast.LENGTH_SHORT).show();
+    }
+    public void Copy6(View view){
+        ClipboardManager clipboardManager=(ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData=ClipData.newPlainText("PROTEIN_DATA",Output6.getText().toString());
+        clipboardManager.setPrimaryClip(clipData);
+        Toast.makeText(getApplicationContext(), "Copied", Toast.LENGTH_SHORT).show();
+    }
 }
 
 

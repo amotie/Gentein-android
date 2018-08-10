@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:hint="Enter the length of the DNA"
         android:inputType="number"
-        android:maxLength="4"
+
 
         android:singleLine="false"
         android:textColor="@color/colorPrimary" />
@@ -35,6 +35,7 @@
         android:background="@color/colorAccent"
         android:layout_margin="10dp"
         android:id="@+id/Close"
+        android:onClick="Close"
         />
     <Button
         android:layout_width="wrap_content"
@@ -46,6 +47,7 @@
         android:background="@color/colorAccent"
         android:layout_margin="10dp"
         android:id="@+id/Genratebtn"
+        android:onClick="Generate"
         />
     </LinearLayout>
 
